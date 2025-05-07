@@ -14,23 +14,50 @@ function openFullScreen(src) {
   win.document.write(`<img src="${src}" style="width:100%">`);
 }
 
+
 let cart = [];
 
 function addToCart(name, price) {
   cart.push({ name, price });
   alert(`${name} ajouté au panier.`);
+  document.getElementById("cartCount").textContent = cart.length;
 }
 
 function showCart() {
   const cartList = document.getElementById("cartList");
+  const cartTotal = document.getElementById("cartTotal");
   cartList.innerHTML = "";
+
+  let total = 0;
   cart.forEach((item) => {
     const li = document.createElement("li");
-    li.textContent = `${item.name} - ${item.price} FCFA`;
+    li.className = "list-group-item d-flex justify-content-between align-items-center";
+    li.innerHTML = `
+      ${item.name}
+      <span class="badge bg-primary rounded-pill">${item.price.toLocaleString()} FCFA</span>
+    `;
     cartList.appendChild(li);
+    total += item.price;
   });
-  document.getElementById("cartModal").style.display = "block";
+
+  cartTotal.textContent = total.toLocaleString();
+
+  // Bootstrap Modal affichage
+  const myModal = new bootstrap.Modal(document.getElementById("cartModal"));
+  myModal.show();
 }
+
+
+// function showCart() {
+//   const cartList = document.getElementById("cartList");
+//   cartList.innerHTML = "";
+//   cart.forEach((item) => {
+//     const li = document.createElement("li");
+//     li.textContent = `${item.name} - ${item.price} FCFA`;
+//     cartList.appendChild(li);
+//   });
+//   document.getElementById("cartModal").style.display = "block";
+// }
 
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();

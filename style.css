@@ -1,0 +1,150 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav button {
+    margin: 5px;
+    padding: 10px;
+  }
+  
+  #catalogue {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .item {
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-img-top {
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+  }
+  
+  .carousel img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+  }
+  
+  #contact, #devis, #avis {
+    margin: 20px;
+    padding: 10px;
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+  }
+  
+  footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .socials a {
+    color: white;
+    margin: 0 10px;
+  }
+  
+  .whatsapp-button {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+
+  #carouselExampleIndicators {
+    max-width: 100%;       /* Empêche le débordement horizontal */
+    height: 300px;         /* Fixe une hauteur selon ton besoin */
+    overflow: hidden;      /* Cache tout débordement */
+  }
+
+  #carouselExampleIndicators .carousel-item img {
+    height: 100%;
+    object-fit: cover;     /* Couvre le conteneur sans déformation */
+  }
+
+  /* style.css */
+nav .d-flex {
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+nav .btn {
+  flex: 0 0 auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+.fab-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: #25d366;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.fab-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+.fab-whatsapp img {
+  width: 42px;
+  height: 42px;
+}
